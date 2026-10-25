@@ -21,6 +21,7 @@ export function Navbar({ children }: INavbarProps) {
     const supplyPath = useClusterPath({ pathname: '/supply' });
     const programsPath = useClusterPath({ pathname: '/verified-programs' });
     const inspectorPath = useClusterPath({ pathname: '/tx/inspector' });
+    const keypairPath = useClusterPath({ pathname: '/keypair' });
     const selectedLayoutSegment = useSelectedLayoutSegment();
     const selectedLayoutSegments = useSelectedLayoutSegments();
     return (
@@ -77,6 +78,14 @@ export function Navbar({ children }: INavbarProps) {
                                 href={inspectorPath}
                             >
                                 Inspector
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link
+                                className={`nav-link${selectedLayoutSegment === 'keypair' ? ' active' : ''}`}
+                                href={keypairPath}
+                            >
+                                Keypair
                             </Link>
                         </li>
                         <li className="nav-item align-items-center justify-content-center pt-2">
